@@ -7,6 +7,7 @@
 public class Main {
 
     public static void main(String[] args) {
-        
+        Student janech = new Student("Jan", "Janech", "1001120");
+        System.out.println(janech);
     }
 }
