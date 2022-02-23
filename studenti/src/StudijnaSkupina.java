@@ -21,4 +21,10 @@ public class StudijnaSkupina {
     public void pridaj(Student student) {
         this.studenti.add(student);
     }
+
+    public void vypis() {
+        for (Student student : this.studenti) {
+            System.out.println(student);
+        }
+    }
 }
