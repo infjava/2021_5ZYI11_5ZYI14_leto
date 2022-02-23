@@ -25,4 +25,13 @@ public class Student {
     public String getOsobneCislo() {
         return this.osobneCislo;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "meno='" + this.meno + '\'' +
+                ", priezvisko='" + this.priezvisko + '\'' +
+                ", osobneCislo='" + this.osobneCislo + '\'' +
+                '}';
+    }
 }
