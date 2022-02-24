@@ -20,6 +20,18 @@ public class Flotila {
     }
 
     public Vzducholod najdiVzducholod(int nosnost, Konstrukcia konstrukcia, boolean ibaDostupna) {
+        for (Vzducholod vzducholod : this.vzducholode) {
+            if (vzducholod.getNosnost() == nosnost && vzducholod.getKonstrukcia() == konstrukcia) {
+                if (ibaDostupna) {
+                    if (vzducholod.getStav() == Stav.VOLNA) {
+                        return vzducholod;
+                    }
+                } else {
+                    return vzducholod;
+                }
+            }
+        }
+
         return null;
     }
 
