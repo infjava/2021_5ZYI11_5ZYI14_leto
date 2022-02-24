@@ -4,6 +4,7 @@
  * @author janik
  */
 public class Vzducholod {
+    private static final int SERVIS_PO_KOLKYCH_POZICANIACH = 5;
     private final int id;
     private final Konstrukcia konstrukcia;
     private final String nazov;
@@ -48,6 +49,15 @@ public class Vzducholod {
     }
 
     public boolean navrat() {
+        if (this.stav == Stav.POZICANA) {
+            if (this.pocetPozicani >= Vzducholod.SERVIS_PO_KOLKYCH_POZICANIACH) {
+                this.stav = Stav.V_SERVISE;
+                this.pocetPozicani = 0;
+            } else {
+                this.stav = Stav.VOLNA;
+            }
+            return true;
+        }
         return false;
     }
 
