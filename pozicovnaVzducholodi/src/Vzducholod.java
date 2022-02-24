@@ -8,6 +8,7 @@ public class Vzducholod {
     private final Konstrukcia konstrukcia;
     private final String nazov;
     private final int nosnost;
+    private int pocetPozicani;
     private Stav stav;
 
     public Vzducholod(int id, Konstrukcia konstrukcia, String nazov, int nosnost) {
@@ -16,6 +17,7 @@ public class Vzducholod {
         this.konstrukcia = konstrukcia;
         this.nazov = nazov;
         this.nosnost = nosnost;
+        this.pocetPozicani = 0;
 
         this.stav = Stav.VOLNA;
     }
@@ -37,6 +39,11 @@ public class Vzducholod {
     }
 
     public boolean pozicka() {
+        if (this.stav == Stav.VOLNA) {
+            this.stav = Stav.POZICANA;
+            this.pocetPozicani++;
+            return true;
+        }
         return false;
     }
 
@@ -50,5 +57,15 @@ public class Vzducholod {
 
     public Stav getStav() {
         return this.stav;
+    }
+
+    @Override
+    public String toString() {
+        return "Vzducholod{" +
+                "id=" + this.id +
+                ", konstrukcia=" + this.konstrukcia +
+                ", nazov='" + this.nazov + '\'' +
+                ", nosnost=" + this.nosnost +
+                '}';
     }
 }
