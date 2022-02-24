@@ -46,6 +46,10 @@ public class Flotila {
     }
 
     public void vypisVzducholode(Stav stav) {
-
+        for (Vzducholod vzducholod : this.vzducholode) {
+            if (vzducholod.getStav() == stav || stav == null) {
+                System.out.println(vzducholod);
+            }
+        }
     }
 }
