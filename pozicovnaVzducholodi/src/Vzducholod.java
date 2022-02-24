@@ -44,6 +44,10 @@ public class Vzducholod {
         return false;
     }
 
+    public boolean oprava() {
+        return false;
+    }
+
     public Stav getStav() {
         return this.stav;
     }
