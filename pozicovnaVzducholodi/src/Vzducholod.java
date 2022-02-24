@@ -62,6 +62,10 @@ public class Vzducholod {
     }
 
     public boolean oprava() {
+        if (this.stav == Stav.V_SERVISE) {
+            this.stav = Stav.VOLNA;
+            return true;
+        }
         return false;
     }
 
