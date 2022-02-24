@@ -39,6 +39,10 @@ public class Vzducholod {
         return this.nosnost;
     }
 
+    public int getPocetPozicani() {
+        return this.pocetPozicani;
+    }
+
     public boolean pozicka() {
         if (this.stav == Stav.VOLNA) {
             this.stav = Stav.POZICANA;
