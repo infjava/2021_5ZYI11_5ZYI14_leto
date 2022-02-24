@@ -36,6 +36,12 @@ public class Flotila {
     }
 
     public Vzducholod najdiVzducholod(int id) {
+        for (Vzducholod vzducholod : this.vzducholode) {
+            if (vzducholod.getId() == id) {
+                return vzducholod;
+            }
+        }
+
         return null;
     }
 
