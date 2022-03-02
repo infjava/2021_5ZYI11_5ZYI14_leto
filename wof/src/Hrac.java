@@ -14,7 +14,14 @@ public class Hrac {
         return this.aktualnaMiestnost;
     }
 
-    public void setAktualnaMiestnost(Miestnost aktualnaMiestnost) {
-        this.aktualnaMiestnost = aktualnaMiestnost;
+    void posunSa(String smer) {
+        Miestnost novaMiestnost = this.aktualnaMiestnost.getMiestnostVSmere(smer);
+
+        if (novaMiestnost == null) {
+            System.out.println("Tam nie je vychod!");
+        } else {
+            this.aktualnaMiestnost = novaMiestnost;
+            this.aktualnaMiestnost.vypisPopisMiestnosti();
+        }
     }
 }
