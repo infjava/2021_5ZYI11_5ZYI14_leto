@@ -20,20 +20,22 @@
  
 public class Hra  {
     private final Parser parser;
-    private Miestnost aktualnaMiestnost;
-    
+    private final Hrac hrac;
+
     /**
      * Vytvori a inicializuje hru.
      */
     public Hra() {
-        this.vytvorMiestnosti();
+        Miestnost startovaciaMiestnost = this.vytvorMiestnosti();
+        this.hrac = new Hrac(startovaciaMiestnost);
         this.parser = new Parser();
     }
 
     /**
      * Vytvori mapu hry - miestnosti.
+     * @return startovacia miestnost hry
      */
-    private void vytvorMiestnosti() {
+    private Miestnost vytvorMiestnosti() {
         // vytvorenie miestnosti
         Miestnost terasa = new Miestnost("terasa - hlavny vstup na fakultu");
         Miestnost aula = new Miestnost("aula");
@@ -48,7 +50,7 @@ public class Hra  {
         labak.nastavVychody(terasa, kancelaria, null, null);
         kancelaria.nastavVychody(null, null, null, labak);
 
-        this.aktualnaMiestnost = terasa;  // startovacia miestnost hry
+        return terasa;
     }
 
     /**
@@ -81,7 +83,7 @@ public class Hra  {
         System.out.println("World of FRI je nova, neuveritelne nudna adventura.");
         System.out.println("Zadaj 'pomoc' ak potrebujes pomoc.");
         System.out.println();
-        this.aktualnaMiestnost.vypisPopisMiestnosti();
+        this.hrac.getAktualnaMiestnost().vypisPopisMiestnosti();
     }
 
     /**
@@ -140,13 +142,13 @@ public class Hra  {
         String smer = prikaz.getParameter();
 
         // Pokus o opustenie aktualnej miestnosti danym vychodom.
-        Miestnost novaMiestnost = this.aktualnaMiestnost.getMiestnostVSmere(smer);
+        Miestnost novaMiestnost = this.hrac.getAktualnaMiestnost().getMiestnostVSmere(smer);
 
         if (novaMiestnost == null) {
             System.out.println("Tam nie je vychod!");
         } else {
-            this.aktualnaMiestnost = novaMiestnost;
-            this.aktualnaMiestnost.vypisPopisMiestnosti();
+            this.hrac.setAktualnaMiestnost(novaMiestnost);
+            this.hrac.getAktualnaMiestnost().vypisPopisMiestnosti();
         }
     }
 
