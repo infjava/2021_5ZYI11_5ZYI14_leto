@@ -94,21 +94,12 @@ public class Miestnost {
     }
 
     Miestnost getMiestnostVSmere(String smer) {
-        Miestnost novaMiestnost = null;
-        switch (smer) {
-            case "sever":
-                novaMiestnost = this.getSevernyVychod();
-                break;
-            case "vychod":
-                novaMiestnost = this.getVychodnyVychod();
-                break;
-            case "juh":
-                novaMiestnost = this.getJuznyVychod();
-                break;
-            case "zapad":
-                novaMiestnost = this.getZapadnyVychod();
-                break;
-        }
-        return novaMiestnost;
+        return switch (smer) {
+            case "sever" -> this.getSevernyVychod();
+            case "vychod" -> this.getVychodnyVychod();
+            case "juh" -> this.getJuznyVychod();
+            case "zapad" -> this.getZapadnyVychod();
+            default -> null;
+        };
     }
 }
