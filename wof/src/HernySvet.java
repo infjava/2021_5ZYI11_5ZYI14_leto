@@ -4,11 +4,12 @@
  * @author janik
  */
 public class HernySvet {
+    private final Miestnost startovaciaMiestnost;
+
     /**
      * Vytvori mapu hry - miestnosti.
-     * @return startovacia miestnost hry
      */
-    Miestnost vytvorMiestnosti() {
+    public HernySvet() {
         // vytvorenie miestnosti
         Miestnost terasa = new Miestnost("terasa - hlavny vstup na fakultu");
         Miestnost aula = new Miestnost("aula");
@@ -23,6 +24,10 @@ public class HernySvet {
         labak.nastavVychody(terasa, kancelaria, null, null);
         kancelaria.nastavVychody(null, null, null, labak);
 
-        return terasa;
+        this.startovaciaMiestnost = terasa;
+    }
+
+    public Miestnost getStartovaciaMiestnost() {
+        return this.startovaciaMiestnost;
     }
 }

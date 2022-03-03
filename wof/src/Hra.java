@@ -29,8 +29,7 @@ public class Hra  {
      */
     public Hra() {
         this.hernySvet = new HernySvet();
-        Miestnost startovaciaMiestnost = this.hernySvet.vytvorMiestnosti();
-        this.hrac = new Hrac(startovaciaMiestnost);
+        this.hrac = new Hrac(this.hernySvet.getStartovaciaMiestnost());
         this.parser = new Parser();
     }
 
