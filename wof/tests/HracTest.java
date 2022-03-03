@@ -23,6 +23,11 @@ class HracTest {
     }
 
     @Test
+    void getAktualnaMiestnost() {
+        Assertions.assertSame(this.aktualna, this.hrac.getAktualnaMiestnost());
+    }
+
+    @Test
     void posunSaSpravne() {
         this.hrac.posunSa("sever");
 
