@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import org.junit.jupiter.api.Assertions;
@@ -9,39 +10,36 @@ import org.junit.jupiter.api.Assertions;
  */
 class HracTest {
 
+    private Hrac hrac;
+    private Miestnost aktualna;
+    private Miestnost susedna;
+
+    @BeforeEach
+    void setUp() {
+        this.aktualna = new Miestnost("aktualna");
+        this.susedna = new Miestnost("susedna");
+        this.aktualna.nastavVychody(this.susedna, null, null, null);
+        this.hrac = new Hrac(this.aktualna);
+    }
+
     @Test
     void posunSaSpravne() {
-        Miestnost aktualna = new Miestnost("aktualna");
-        Miestnost susedna = new Miestnost("susedna");
-        aktualna.nastavVychody(susedna, null, null, null);
-        Hrac hrac = new Hrac(aktualna);
+        this.hrac.posunSa("sever");
 
-        hrac.posunSa("sever");
-
-        Assertions.assertSame(susedna, hrac.getAktualnaMiestnost());
+        Assertions.assertSame(this.susedna, this.hrac.getAktualnaMiestnost());
     }
 
     @Test
     void posunSaDoNespravnehoSmeru() {
-        Miestnost aktualna = new Miestnost("aktualna");
-        Miestnost susedna = new Miestnost("susedna");
-        aktualna.nastavVychody(susedna, null, null, null);
-        Hrac hrac = new Hrac(aktualna);
+        this.hrac.posunSa("vychod");
 
-        hrac.posunSa("vychod");
-
-        Assertions.assertSame(aktualna, hrac.getAktualnaMiestnost());
+        Assertions.assertSame(this.aktualna, this.hrac.getAktualnaMiestnost());
     }
 
     @Test
     void posunSaDoNeexistujucehoSmeru() {
-        Miestnost aktualna = new Miestnost("aktualna");
-        Miestnost susedna = new Miestnost("susedna");
-        aktualna.nastavVychody(susedna, null, null, null);
-        Hrac hrac = new Hrac(aktualna);
+        this.hrac.posunSa("severozapad");
 
-        hrac.posunSa("severozapad");
-
-        Assertions.assertSame(aktualna, hrac.getAktualnaMiestnost());
+        Assertions.assertSame(this.aktualna, this.hrac.getAktualnaMiestnost());
     }
 }
