@@ -18,11 +18,14 @@ public class HernySvet {
         Miestnost kancelaria = new Miestnost("kancelaria spravcu pocitacoveho laboratoria");
 
         // inicializacia miestnosti = nastavenie vychodov
-        terasa.nastavVychody(null, aula, labak, bufet);
-        aula.nastavVychody(null, null, null, terasa);
-        bufet.nastavVychody(null, terasa, null, null);
-        labak.nastavVychody(terasa, kancelaria, null, null);
-        kancelaria.nastavVychody(null, null, null, labak);
+        terasa.nastavVychod(aula, "vychod");
+        terasa.nastavVychod(labak, "juh");
+        terasa.nastavVychod(bufet, "zapad");
+        aula.nastavVychod(terasa, "zapad");
+        bufet.nastavVychod(terasa, "vychod");
+        labak.nastavVychod(terasa, "sever");
+        labak.nastavVychod(kancelaria, "vychod");
+        kancelaria.nastavVychod(labak, "zapad");
 
         this.startovaciaMiestnost = terasa;
     }

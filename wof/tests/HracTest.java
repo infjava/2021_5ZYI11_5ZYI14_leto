@@ -18,7 +18,10 @@ class HracTest {
     void setUp() {
         this.aktualna = new Miestnost("aktualna");
         this.susedna = new Miestnost("susedna");
-        this.aktualna.nastavVychody(this.susedna, null, null, null);
+        this.aktualna.nastavVychod(this.susedna, "sever");
+        this.aktualna.nastavVychod(null, "vychod");
+        this.aktualna.nastavVychod(null, "juh");
+        this.aktualna.nastavVychod(null, "zapad");
         this.hrac = new Hrac(this.aktualna);
     }
 
