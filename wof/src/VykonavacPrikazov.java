@@ -11,7 +11,7 @@
 public class VykonavacPrikazov {
     // konstantne pole nazvov prikazov
     private static final String[] PLATNE_PRIKAZY = {
-        "chod", "ukonci", "pomoc"
+        "chod", "ukonci", "pomoc", "prehladaj"
     };
 
     /**
@@ -54,8 +54,19 @@ public class VykonavacPrikazov {
                 return false;
             case "ukonci":
                 return this.ukonciHru(prikaz);
+            case "prehladaj":
+                this.prehladajAktualnuMiestnost(hrac);
+                return false;
             default:
                 return false;
+        }
+    }
+
+    private void prehladajAktualnuMiestnost(Hrac hrac) {
+        if (hrac.getAktualnaMiestnost().getPopis().startsWith("vratnica")) {
+            System.out.println("Predmety: kluce isic");
+        } else {
+            System.out.println("Nic si nenasiel");
         }
     }
 
