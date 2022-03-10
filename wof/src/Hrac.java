@@ -33,4 +33,9 @@ public class Hrac {
         this.aktualnaMiestnost.odoberPredmet(nazovPredmetu);
         this.inventar.add(nazovPredmetu);
     }
+
+    public void polozPredmet(String nazovPredmetu) {
+        this.inventar.remove(nazovPredmetu);
+        this.aktualnaMiestnost.vlozPredmet(nazovPredmetu);
+    }
 }

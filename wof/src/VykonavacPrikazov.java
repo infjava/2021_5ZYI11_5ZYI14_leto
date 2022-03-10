@@ -11,7 +11,7 @@
 public class VykonavacPrikazov {
     // konstantne pole nazvov prikazov
     private static final String[] PLATNE_PRIKAZY = {
-        "chod", "ukonci", "pomoc", "prehladaj", "zdvihni"
+        "chod", "ukonci", "pomoc", "prehladaj", "zdvihni", "poloz"
     };
 
     /**
@@ -60,9 +60,23 @@ public class VykonavacPrikazov {
             case "zdvihni":
                 this.zdvihniPredmet(prikaz, hrac);
                 return false;
+            case "poloz":
+                this.polozPredmet(prikaz, hrac);
+                return false;
             default:
                 return false;
         }
+    }
+
+    private void polozPredmet(Prikaz prikaz, Hrac hrac) {
+        if (!prikaz.maParameter()) {
+            System.out.println("Aky predmet chces polozit?");
+            return;
+        }
+
+        String nazovPredmetu = prikaz.getParameter();
+
+        hrac.polozPredmet(nazovPredmetu);
     }
 
     private void zdvihniPredmet(Prikaz prikaz, Hrac hrac) {
