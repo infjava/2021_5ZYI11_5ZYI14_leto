@@ -30,12 +30,18 @@ public class Hrac {
     }
 
     public void zdvihniPredmet(String nazovPredmetu) {
-        this.aktualnaMiestnost.odoberPredmet(nazovPredmetu);
-        this.inventar.add(nazovPredmetu);
+        if (this.aktualnaMiestnost.odoberPredmet(nazovPredmetu)) {
+            this.inventar.add(nazovPredmetu);
+        } else {
+            System.out.println("Ako kukam, tak kukam, taky predmet nevidim");
+        }
     }
 
     public void polozPredmet(String nazovPredmetu) {
-        this.inventar.remove(nazovPredmetu);
-        this.aktualnaMiestnost.vlozPredmet(nazovPredmetu);
+        if (this.inventar.remove(nazovPredmetu)) {
+            this.aktualnaMiestnost.vlozPredmet(nazovPredmetu);
+        } else {
+            System.out.println("Taky predmet veru nemas");
+        }
     }
 }

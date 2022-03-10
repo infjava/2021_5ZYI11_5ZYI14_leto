@@ -72,7 +72,7 @@ public class Miestnost {
         }
     }
 
-    public void odoberPredmet(String nazovPredmetu) {
-        this.predmety.remove(nazovPredmetu);
+    public boolean odoberPredmet(String nazovPredmetu) {
+        return this.predmety.remove(nazovPredmetu);
     }
 }
