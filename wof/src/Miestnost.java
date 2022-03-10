@@ -71,4 +71,8 @@ public class Miestnost {
             System.out.println("Nist si nenasiel");
         }
     }
+
+    public void odoberPredmet(String nazovPredmetu) {
+        this.predmety.remove(nazovPredmetu);
+    }
 }
