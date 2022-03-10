@@ -54,6 +54,9 @@ public class HernySvet {
         vratnica.nastavVychod(a, "a");
         vratnica.nastavVychod(vonok, "vonok");
 
+        vratnica.vlozPredmet("kluce");
+        vratnica.vlozPredmet("isic");
+
         a.nastavVychod(c, "c");
         a.nastavVychod(vratnica, "vratnica");
         a.nastavVychod(wc, "wc");

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.TreeMap;
 
 /**
@@ -15,6 +16,7 @@ import java.util.TreeMap;
 public class Miestnost {
     private final String popisMiestnosti;
     private final TreeMap<String, Miestnost> vychody;
+    private final ArrayList<String> predmety;
 
     /**
      * Vytvori miestnost popis ktorej je v parametrom.
@@ -26,6 +28,7 @@ public class Miestnost {
     public Miestnost(String popis) {
         this.popisMiestnosti = popis;
         this.vychody = new TreeMap<>();
+        this.predmety = new ArrayList<String>();
     }
 
     public void nastavVychod(Miestnost miestnost, String smer) {
@@ -52,5 +55,20 @@ public class Miestnost {
 
     Miestnost getMiestnostVSmere(String smer) {
         return this.vychody.get(smer);
+    }
+
+    public void vlozPredmet(String nazovPredmetu) {
+        this.predmety.add(nazovPredmetu);
+    }
+
+    public void vypisZoznamPredmetov() {
+        if (!this.predmety.isEmpty()) {
+            System.out.println("Nasiel si totokaj:");
+            for (String nazovPredmetu : this.predmety) {
+                System.out.printf("- %s%n", nazovPredmetu);
+            }
+        } else {
+            System.out.println("Nist si nenasiel");
+        }
     }
 }

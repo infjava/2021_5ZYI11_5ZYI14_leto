@@ -63,11 +63,7 @@ public class VykonavacPrikazov {
     }
 
     private void prehladajAktualnuMiestnost(Hrac hrac) {
-        if (hrac.getAktualnaMiestnost().getPopis().startsWith("vratnica")) {
-            System.out.println("Predmety: kluce isic");
-        } else {
-            System.out.println("Nic si nenasiel");
-        }
+        hrac.getAktualnaMiestnost().vypisZoznamPredmetov();
     }
 
     /**
