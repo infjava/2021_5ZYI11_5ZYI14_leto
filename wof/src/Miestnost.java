@@ -28,7 +28,7 @@ public class Miestnost {
     public Miestnost(String popis) {
         this.popisMiestnosti = popis;
         this.vychody = new TreeMap<>();
-        this.predmety = new HashMap<String, Predmet>();
+        this.predmety = new HashMap<String, IPredmet>();
     }
 
     public void nastavVychod(Miestnost miestnost, String smer) {

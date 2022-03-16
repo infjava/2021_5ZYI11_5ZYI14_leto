@@ -56,7 +56,7 @@ public class HernySvet {
 
         vratnica.vlozPredmet(new Predmet("kluce"));
         vratnica.vlozPredmet(new Predmet("isic"));
-        vratnica.vlozPredmet(new Predmet("navleky"));
+        vratnica.vlozPredmet(new Navleky());
 
         a.nastavVychod(c, "c");
         a.nastavVychod(vratnica, "vratnica");
