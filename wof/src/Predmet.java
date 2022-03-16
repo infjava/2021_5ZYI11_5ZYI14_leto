@@ -8,4 +8,12 @@ public class Predmet {
     public String getNazov() {
         return this.nazov;
     }
+
+    public void pouzi() {
+        if (this.nazov.equals("navleky")) {
+            System.out.println("Obul si si navleky");
+        } else {
+            System.out.printf("Predmet %s sa neda pouzit%n", this.nazov);
+        }
+    }
 }
