@@ -1,4 +1,4 @@
-public class Predmet {
+public class Predmet implements IPredmet {
     private final String nazov;
     private boolean obute;
 
@@ -7,10 +7,12 @@ public class Predmet {
         this.obute = false;
     }
 
+    @Override
     public String getNazov() {
         return this.nazov;
     }
 
+    @Override
     public void pouzi() {
         switch (this.nazov) {
             case "navleky":

@@ -6,7 +6,7 @@ import java.util.HashMap;
  * @author janik
  */
 public class Hrac {
-    private final HashMap<String, Predmet> inventar;
+    private final HashMap<String, IPredmet> inventar;
     private Miestnost aktualnaMiestnost;
 
     public Hrac(Miestnost aktualnaMiestnost) {
@@ -30,7 +30,7 @@ public class Hrac {
     }
 
     public void zdvihniPredmet(String nazovPredmetu) {
-        Predmet predmet = this.aktualnaMiestnost.odoberPredmet(nazovPredmetu);
+        IPredmet predmet = this.aktualnaMiestnost.odoberPredmet(nazovPredmetu);
         if (predmet != null) {
             this.inventar.put(predmet.getNazov(), predmet);
         } else {
@@ -39,7 +39,7 @@ public class Hrac {
     }
 
     public void polozPredmet(String nazovPredmetu) {
-        Predmet predmet = this.inventar.remove(nazovPredmetu);
+        IPredmet predmet = this.inventar.remove(nazovPredmetu);
         if (predmet != null) {
             this.aktualnaMiestnost.vlozPredmet(predmet);
         } else {
@@ -48,7 +48,7 @@ public class Hrac {
     }
 
     public void pouziPredmet(String nazovPredmetu) {
-        Predmet predmet = this.inventar.get(nazovPredmetu);
+        IPredmet predmet = this.inventar.get(nazovPredmetu);
         if (predmet != null) {
             predmet.pouzi();
         } else {
