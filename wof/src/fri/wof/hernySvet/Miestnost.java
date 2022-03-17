@@ -1,8 +1,12 @@
+package fri.wof.hernySvet;
+
+import fri.wof.predmety.IPredmet;
+
 import java.util.HashMap;
 import java.util.TreeMap;
 
 /**
- * Trieda Miestnost realizuje jednu miestnost/priestor v celom priestore hry.
+ * Trieda fri.wof.hernySvet.Miestnost realizuje jednu miestnost/priestor v celom priestore hry.
  * Kazda "miestnost" je z inymi miestnostami spojena vychodmi. 
  * Vychody z miestnosti su oznacovane svetovymi stranami sever, vychod, juh
  * a zapad. Pre kazdy vychod si miestnost pamata odkaz na susednu miestnost

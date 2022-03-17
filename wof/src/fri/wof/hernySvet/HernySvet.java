@@ -1,3 +1,8 @@
+package fri.wof.hernySvet;
+
+import fri.wof.predmety.Navleky;
+import fri.wof.predmety.Predmet;
+
 /**
  * 28. 2. 2021 - 21:14
  *

@@ -1,3 +1,5 @@
+package fri.wof.predmety;
+
 public class Predmet implements IPredmet {
     private final String nazov;
 
@@ -12,6 +14,6 @@ public class Predmet implements IPredmet {
 
     @Override
     public void pouzi() {
-        System.out.printf("Predmet %s sa neda pouzit%n", this.nazov);
+        System.out.printf("fri.wof.predmety.Predmet %s sa neda pouzit%n", this.nazov);
     }
 }

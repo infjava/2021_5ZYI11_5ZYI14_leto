@@ -1,4 +1,4 @@
-/*
+package fri.wof;/*
  inventar
  - predmety
  - priklady:

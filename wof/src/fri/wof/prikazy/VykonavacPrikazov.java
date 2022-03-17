@@ -1,3 +1,7 @@
+package fri.wof.prikazy;
+
+import fri.wof.hernySvet.Hrac;
+
 /**
  * Trieda NazvyPrikazov udrzuje zoznam nazvov platnych prikazov hry. 
  * Za ulohu ma rozpoznavat platne prikazy.
@@ -110,7 +114,7 @@ public class VykonavacPrikazov {
     /**
      * Ukonci hru.
      * Skotroluje cely prikaz a zisti, ci je naozaj koniec hry.
-     * Prikaz ukoncenia nema parameter.
+     * fri.wof.prikazy.Prikaz ukoncenia nema parameter.
      *
      * @return true, ak prikaz konci hru, inak false.
      * @param prikaz
