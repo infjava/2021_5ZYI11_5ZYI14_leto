@@ -79,4 +79,8 @@ public class Miestnost {
     public IPredmet odoberPredmet(String nazovPredmetu) {
         return this.predmety.remove(nazovPredmetu);
     }
+
+    public boolean mozeVojst(Hrac hrac) {
+        return true;
+    }
 }

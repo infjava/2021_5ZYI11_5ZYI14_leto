@@ -27,6 +27,8 @@ public class Hrac {
 
         if (novaMiestnost == null) {
             System.out.println("Tam nie je vychod!");
+        } else if (!novaMiestnost.mozeVojst(this)) {
+            System.out.println("Nemozes vojst");
         } else {
             this.aktualnaMiestnost = novaMiestnost;
             this.aktualnaMiestnost.vypisPopisMiestnosti();
@@ -58,5 +60,9 @@ public class Hrac {
         } else {
             System.out.println("Taky predmet veru nemas");
         }
+    }
+
+    public IPredmet getPredmet(String nazovPredmetu) {
+        return this.inventar.get(nazovPredmetu);
     }
 }

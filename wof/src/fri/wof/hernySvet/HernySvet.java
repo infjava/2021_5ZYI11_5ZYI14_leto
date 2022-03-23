@@ -19,7 +19,7 @@ public class HernySvet {
         Miestnost sietovyLabak = new Miestnost("sietovy labak - tu robime pokusy na pocitacovej sieti; hadam nezhodime cely internet");
         Miestnost vonok = new Miestnost("vonok - i want to be free");
         Miestnost jedalen = new Miestnost("jedalen - prave davaju na obed uho - univerzalnu hnedu omacku. Mnam");
-        Miestnost b2 = new Miestnost("b2 - skupina studentov prave maka na novych vlastnostiach hry world of fri");
+        Miestnost b2 = new MiestnostSKontrolouNavlekov("b2 - skupina studentov prave maka na novych vlastnostiach hry world of fri");
         Miestnost vytah = new Miestnost("vytah - do tohto by nikto pricetny nesadol. Takze ja mozem");
         Miestnost c9 = new Miestnost("c9 - prave prebieha prednaska z matiky, aspon sa nieco naucim");
         Miestnost c = new Miestnost("c - chodba v podzemi, uz len najst dalsi level a idem na Diabla");
