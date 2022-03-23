@@ -41,7 +41,7 @@ public class VykonavacPrikazov {
      * @param hra
      * @return true ak prikaz ukonci hru, inak vrati false.
      */
-    boolean vykonajPrikaz(Prikaz prikaz, Hrac hrac) {
+    public boolean vykonajPrikaz(Prikaz prikaz, Hrac hrac) {
         if (prikaz.jeNeznamy()) {
             System.out.println("Nerozumiem, co mas na mysli...");
             return false;

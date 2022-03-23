@@ -48,7 +48,7 @@ public class Miestnost {
         return this.popisMiestnosti;
     }
 
-    void vypisPopisMiestnosti() {
+    public void vypisPopisMiestnosti() {
         System.out.println("Teraz si v miestnosti " + this.getPopis());
         System.out.print("Vychody: ");
         for (String smer : this.vychody.keySet()) {
