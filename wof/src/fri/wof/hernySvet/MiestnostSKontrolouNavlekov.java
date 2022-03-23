@@ -18,6 +18,10 @@ public class MiestnostSKontrolouNavlekov extends Miestnost {
     @Override
     public boolean mozeVojst(Hrac hrac) {
         IPredmet navleky = hrac.getPredmet("navleky");
-        return navleky != null && ((Navleky)navleky).getObute();
+        if (navleky instanceof Navleky pretypovaneNavleky) {
+            return pretypovaneNavleky.getObute();
+        } else {
+            return false;
+        }
     }
 }
