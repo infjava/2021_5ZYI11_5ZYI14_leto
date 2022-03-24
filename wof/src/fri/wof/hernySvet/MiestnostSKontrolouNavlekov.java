@@ -3,7 +3,7 @@ package fri.wof.hernySvet;
 import fri.wof.predmety.IPredmet;
 import fri.wof.predmety.Navleky;
 
-public class MiestnostSKontrolouNavlekov extends Miestnost {
+public class MiestnostSKontrolouNavlekov extends StandardnaMiestnost {
     /**
      * Vytvori miestnost popis ktorej je v parametrom.
      * Po vytvoreni miestnost nema ziadne vychody. Popis miesnost strucne

@@ -1,5 +1,6 @@
 import fri.wof.hernySvet.Hrac;
 import fri.wof.hernySvet.Miestnost;
+import fri.wof.hernySvet.StandardnaMiestnost;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,13 +14,13 @@ import org.junit.jupiter.api.Assertions;
 class HracTest {
 
     private Hrac hrac;
-    private Miestnost aktualna;
+    private StandardnaMiestnost aktualna;
     private Miestnost susedna;
 
     @BeforeEach
     void setUp() {
-        this.aktualna = new Miestnost("aktualna");
-        this.susedna = new Miestnost("susedna");
+        this.aktualna = new StandardnaMiestnost("aktualna");
+        this.susedna = new StandardnaMiestnost("susedna");
         this.aktualna.nastavVychod(this.susedna, "sever");
         this.aktualna.nastavVychod(null, "vychod");
         this.aktualna.nastavVychod(null, "juh");

@@ -9,25 +9,25 @@ import fri.wof.predmety.Predmet;
  * @author janik
  */
 public class HernySvet {
-    private final Miestnost startovaciaMiestnost;
+    private final StandardnaMiestnost startovaciaMiestnost;
 
     /**
      * Vytvori mapu hry - miestnosti.
      */
     public HernySvet() {
         // vytvorenie miestnosti
-        Miestnost sietovyLabak = new Miestnost("sietovy labak - tu robime pokusy na pocitacovej sieti; hadam nezhodime cely internet");
-        Miestnost vonok = new Miestnost("vonok - i want to be free");
-        Miestnost jedalen = new Miestnost("jedalen - prave davaju na obed uho - univerzalnu hnedu omacku. Mnam");
-        Miestnost b2 = new MiestnostSKontrolouNavlekov("b2 - skupina studentov prave maka na novych vlastnostiach hry world of fri");
-        Miestnost vytah = new Miestnost("vytah - do tohto by nikto pricetny nesadol. Takze ja mozem");
-        Miestnost c9 = new Miestnost("c9 - prave prebieha prednaska z matiky, aspon sa nieco naucim");
-        Miestnost c = new Miestnost("c - chodba v podzemi, uz len najst dalsi level a idem na Diabla");
-        Miestnost atrium = new Miestnost("atrium - dnes vystavuju Picasa");
-        Miestnost b = new Miestnost("b - dlha temna chodba");
-        Miestnost vratnica = new Miestnost("vratnica - hlavny vstup na fakultu");
-        Miestnost a = new Miestnost("a - po chodbe sa siria vone z jedalne a z wc");
-        Miestnost wc = new Miestnost("wc - radsej ani nepoviem, co vidim");
+        StandardnaMiestnost sietovyLabak = new StandardnaMiestnost("sietovy labak - tu robime pokusy na pocitacovej sieti; hadam nezhodime cely internet");
+        StandardnaMiestnost vonok = new StandardnaMiestnost("vonok - i want to be free");
+        StandardnaMiestnost jedalen = new StandardnaMiestnost("jedalen - prave davaju na obed uho - univerzalnu hnedu omacku. Mnam");
+        StandardnaMiestnost b2 = new MiestnostSKontrolouNavlekov("b2 - skupina studentov prave maka na novych vlastnostiach hry world of fri");
+        StandardnaMiestnost vytah = new StandardnaMiestnost("vytah - do tohto by nikto pricetny nesadol. Takze ja mozem");
+        StandardnaMiestnost c9 = new StandardnaMiestnost("c9 - prave prebieha prednaska z matiky, aspon sa nieco naucim");
+        StandardnaMiestnost c = new StandardnaMiestnost("c - chodba v podzemi, uz len najst dalsi level a idem na Diabla");
+        StandardnaMiestnost atrium = new StandardnaMiestnost("atrium - dnes vystavuju Picasa");
+        StandardnaMiestnost b = new StandardnaMiestnost("b - dlha temna chodba");
+        StandardnaMiestnost vratnica = new StandardnaMiestnost("vratnica - hlavny vstup na fakultu");
+        StandardnaMiestnost a = new StandardnaMiestnost("a - po chodbe sa siria vone z jedalne a z wc");
+        StandardnaMiestnost wc = new StandardnaMiestnost("wc - radsej ani nepoviem, co vidim");
 
         sietovyLabak.nastavVychod(vytah, "vytah");
 
@@ -72,7 +72,7 @@ public class HernySvet {
         this.startovaciaMiestnost = vratnica;
     }
 
-    public Miestnost getStartovaciaMiestnost() {
+    public StandardnaMiestnost getStartovaciaMiestnost() {
         return this.startovaciaMiestnost;
     }
 }
