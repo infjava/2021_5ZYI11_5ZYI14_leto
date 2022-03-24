@@ -56,7 +56,7 @@ public class Hrac {
     public void pouziPredmet(String nazovPredmetu) {
         IPredmet predmet = this.inventar.get(nazovPredmetu);
         if (predmet != null) {
-            predmet.pouzi();
+            predmet.pouzi(this);
         } else {
             System.out.println("Taky predmet veru nemas");
         }

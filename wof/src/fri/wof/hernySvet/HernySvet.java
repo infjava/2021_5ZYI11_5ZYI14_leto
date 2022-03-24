@@ -20,7 +20,7 @@ public class HernySvet {
         StandardnaMiestnost vonok = new StandardnaMiestnost("vonok - i want to be free");
         StandardnaMiestnost jedalen = new StandardnaMiestnost("jedalen - prave davaju na obed uho - univerzalnu hnedu omacku. Mnam");
         StandardnaMiestnost b2 = new MiestnostSKontrolouNavlekov("b2 - skupina studentov prave maka na novych vlastnostiach hry world of fri");
-        StandardnaMiestnost vytah = new StandardnaMiestnost("vytah - do tohto by nikto pricetny nesadol. Takze ja mozem");
+        Vytah vytah = new Vytah("vytah - do tohto by nikto pricetny nesadol. Takze ja mozem");
         StandardnaMiestnost c9 = new StandardnaMiestnost("c9 - prave prebieha prednaska z matiky, aspon sa nieco naucim");
         StandardnaMiestnost c = new StandardnaMiestnost("c - chodba v podzemi, uz len najst dalsi level a idem na Diabla");
         StandardnaMiestnost atrium = new StandardnaMiestnost("atrium - dnes vystavuju Picasa");
@@ -39,8 +39,8 @@ public class HernySvet {
 
         b2.nastavVychod(b, "b");
 
-        vytah.nastavVychod(sietovyLabak, "sietovyLabak");
-        vytah.nastavVychod(b, "b");
+        vytah.pridajPoschodie(b);
+        vytah.pridajPoschodie(sietovyLabak);
 
         c9.nastavVychod(c, "c");
 
