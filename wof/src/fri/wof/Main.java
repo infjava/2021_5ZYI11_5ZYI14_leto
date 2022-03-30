@@ -21,6 +21,43 @@ package fri.wof;/*
  - priklady:
    - bufetarka predava bagety
    - vratnicka dava napovedy
+ > porozpravaj vratnicka
+ Dobry den. Co si prajete?
+ 1) Dobry den, jednu horalku
+ 2) Dobry den, aky je cas?
+ 3) Dobry den, kolko je na skole miestnosti?
+ Vyber: 1
+ To musite ist za bufetarkou
+
+ Dobry den. Co si prajete?
+ 1) Dobry den, jednu horalku
+ 2) Dobry den, aky je cas?
+ 3) Dobry den, kolko je na skole miestnosti?
+ Vyber: 2
+ CEST, alebo UTC?
+ 1) CEST
+ 2) UTC
+ Vyber: 1
+ 12:59
+
+ Dobry den. Co si prajete?
+ 1) Dobry den, jednu horalku
+ 2) Dobry den, aky je cas?
+ 3) Dobry den, kolko je na skole miestnosti?
+ Vyber: 2
+ CEST, alebo UTC?
+ 1) CEST
+ 2) UTC
+ Vyber: 2
+ 10:59
+
+ Dobry den. Co si prajete?
+ 1) Dobry den, jednu horalku
+ 2) Dobry den, aky je cas?
+ 3) Dobry den, kolko je na skole miestnosti?
+ Vyber: 3
+ 12, vratane vytahu.
+
  questy
  - sprav skusku
  - alt: uplatky
