@@ -35,6 +35,10 @@ public class StandardnaMiestnost extends Miestnost {
         }
     }
 
+    public void zrusVychod(String smer) {
+        this.vychody.remove(smer);
+    }
+
     public void vypisPopisMiestnosti() {
         System.out.println("Teraz si v miestnosti " + this.getPopis());
         System.out.print("Vychody: ");

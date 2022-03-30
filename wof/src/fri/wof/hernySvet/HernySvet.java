@@ -1,6 +1,7 @@
 package fri.wof.hernySvet;
 
 import fri.wof.predmety.Navleky;
+import fri.wof.predmety.PortalGun;
 import fri.wof.predmety.Predmet;
 
 /**
@@ -62,6 +63,7 @@ public class HernySvet {
         vratnica.vlozPredmet(new Predmet("kluce"));
         vratnica.vlozPredmet(new Predmet("isic"));
         vratnica.vlozPredmet(new Navleky());
+        vratnica.vlozPredmet(new PortalGun());
 
         a.nastavVychod(c, "c");
         a.nastavVychod(vratnica, "vratnica");
