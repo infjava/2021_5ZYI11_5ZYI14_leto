@@ -4,6 +4,8 @@ import fri.wof.hernySvet.Hrac;
 import fri.wof.hernySvet.StandardnaMiestnost;
 
 public class PortalGun implements IPredmet {
+    private static final String[] NAZVY_PORTALOV = {"modry", "oranzovy"};
+
     private int indexPortalu;
     private final StandardnaMiestnost[] portaly;
 
@@ -24,21 +26,22 @@ public class PortalGun implements IPredmet {
             return;
         }
 
-        for (StandardnaMiestnost miestnost : this.portaly) {
-            if (miestnost != null) {
-                miestnost.zrusVychod("portal");
+        for (int i = 0; i < this.portaly.length; i++) {
+            if (this.portaly[i] != null) {
+                this.portaly[i].zrusVychod(NAZVY_PORTALOV[i]);
             }
         }
 
         this.portaly[this.indexPortalu] = aktualnaMiestnost;
-        this.indexPortalu = 1 - this.indexPortalu;
 
         if (this.portaly[0] != null && this.portaly[1] != null) {
-            this.portaly[0].nastavVychod(this.portaly[1], "portal");
-            this.portaly[1].nastavVychod(this.portaly[0], "portal");
-            System.out.println("Otvoril si portal do inej miestnosti");
+            this.portaly[0].nastavVychod(this.portaly[1], NAZVY_PORTALOV[0]);
+            this.portaly[1].nastavVychod(this.portaly[0], NAZVY_PORTALOV[1]);
+            System.out.printf("Otvoril si %s portal do inej miestnosti%n", NAZVY_PORTALOV[this.indexPortalu]);
         } else {
-            System.out.println("Otvoril si portal, ale este nema koniec");
+            System.out.printf("Otvoril si %s portal, ale este nema koniec%n", NAZVY_PORTALOV[this.indexPortalu]);
         }
+
+        this.indexPortalu = 1 - this.indexPortalu;
     }
 }
