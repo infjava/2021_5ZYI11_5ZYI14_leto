@@ -41,11 +41,8 @@ public class StandardnaMiestnost extends Miestnost {
 
     public void vypisPopisMiestnosti() {
         System.out.println("Teraz si v miestnosti " + this.getPopis());
-        System.out.print("Vychody: ");
-        for (String smer : this.vychody.keySet()) {
-            System.out.printf("%s ", smer);
-        }
-        System.out.println();
+        this.vypisZoznamKlucov("Vychody", this.vychody.keySet());
+        this.vypisZoznamNpc();
     }
 
     public Miestnost getMiestnostVSmere(String smer) {

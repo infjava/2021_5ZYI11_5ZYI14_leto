@@ -1,16 +1,20 @@
 package fri.wof.hernySvet;
 
+import fri.wof.npc.Npc;
 import fri.wof.predmety.IPredmet;
 
 import java.util.HashMap;
+import java.util.Set;
 
 public class Miestnost {
     private final String popisMiestnosti;
     private final HashMap<String, IPredmet> predmety;
+    private final HashMap<String, Npc> npccka;
 
     public Miestnost(String popis) {
         this.popisMiestnosti = popis;
         this.predmety = new HashMap<String, IPredmet>();
+        this.npccka = new HashMap<String, Npc>();
     }
 
     /**
@@ -49,5 +53,23 @@ public class Miestnost {
 
     public void vypisPopisMiestnosti() {
         System.out.println(this.popisMiestnosti);
+    }
+
+    public void postavNpc(Npc npc) {
+        this.npccka.put(npc.getMeno(), npc);
+    }
+
+    protected void vypisZoznamNpc() {
+        this.vypisZoznamKlucov("NPC", this.npccka.keySet());
+    }
+
+    protected void vypisZoznamKlucov(String nadpis, Set<String> kluce) {
+        if (!kluce.isEmpty()) {
+            System.out.printf("%s: ", nadpis);
+            for (String kluc : kluce) {
+                System.out.printf("%s ", kluc);
+            }
+            System.out.println();
+        }
     }
 }
