@@ -68,13 +68,29 @@ public class HernySvet {
         vratnica.vlozPredmet(new Navleky());
         vratnica.vlozPredmet(new PortalGun());
 
+        CastRozhovoru vratnickaF = new CastRozhovoru("12, vratane vytahu.", new Odpoved[0]);
+
+        CastRozhovoru vratnickaE = new CastRozhovoru("10:59", new Odpoved[0]);
+
+        CastRozhovoru vratnickaD = new CastRozhovoru("12:59", new Odpoved[0]);
+
+        CastRozhovoru vratnickaC = new CastRozhovoru(
+            "CEST, alebo UTC?",
+            new Odpoved[] {
+                new Odpoved("CEST", vratnickaD),
+                new Odpoved("UTC", vratnickaE)
+            }
+        );
+
+        CastRozhovoru vratnickaB = new CastRozhovoru("To musite ist za bufetarkou", new Odpoved[0]);
+
         CastRozhovoru vratnickaA = new CastRozhovoru(
-                "Dobry den. Co si prajete?",
-                new Odpoved[] {
-                        new Odpoved("Dobry den, jednu horalku"),
-                        new Odpoved("Dobry den, aky je cas?"),
-                        new Odpoved("Dobry den, kolko je na skole miestnosti?")
-                }
+            "Dobry den. Co si prajete?",
+            new Odpoved[] {
+                new Odpoved("Dobry den, jednu horalku", vratnickaB),
+                new Odpoved("Dobry den, aky je cas?", vratnickaC),
+                new Odpoved("Dobry den, kolko je na skole miestnosti?", vratnickaF)
+            }
         );
         vratnica.postavNpc(new Npc("vratnicka", vratnickaA));
 

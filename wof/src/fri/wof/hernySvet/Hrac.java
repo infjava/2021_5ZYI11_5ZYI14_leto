@@ -5,6 +5,7 @@ import fri.wof.npc.Npc;
 import fri.wof.predmety.IPredmet;
 
 import java.util.HashMap;
+import java.util.Scanner;
 
 /**
  * 28. 2. 2021 - 21:14
@@ -69,6 +70,8 @@ public class Hrac {
     }
 
     public void porozpravajSaSNpc(String menoNpc) {
+        Scanner vstup = new Scanner(System.in);
+
         Npc npc = this.aktualnaMiestnost.getNpc(menoNpc);
 
         if (npc == null) {
@@ -78,5 +81,11 @@ public class Hrac {
 
         CastRozhovoru korenRozhovoru = npc.getKorenRozhovoru();
         korenRozhovoru.vypis();
+
+        System.out.print("Vyber: ");
+        int moznost = vstup.nextInt();
+
+        CastRozhovoru nasledujucaCast = korenRozhovoru.getNasledujucaCast(moznost);
+        nasledujucaCast.vypis();
     }
 }

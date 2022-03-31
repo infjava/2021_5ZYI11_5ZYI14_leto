@@ -16,4 +16,8 @@ public class CastRozhovoru {
             System.out.printf("%d) %s%n", i + 1, this.odpovede[i].getReplika());
         }
     }
+
+    public CastRozhovoru getNasledujucaCast(int moznost) {
+        return this.odpovede[moznost - 1].getNasledujucaCast();
+    }
 }
