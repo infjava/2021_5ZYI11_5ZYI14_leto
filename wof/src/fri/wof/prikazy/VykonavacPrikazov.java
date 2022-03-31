@@ -15,7 +15,8 @@ import fri.wof.hernySvet.Hrac;
 public class VykonavacPrikazov {
     // konstantne pole nazvov prikazov
     private static final String[] PLATNE_PRIKAZY = {
-        "chod", "ukonci", "pomoc", "prehladaj", "zdvihni", "poloz", "pouzi"
+        "chod", "ukonci", "pomoc", "prehladaj", "zdvihni", "poloz", "pouzi",
+        "porozpravaj"
     };
 
     /**
@@ -70,9 +71,23 @@ public class VykonavacPrikazov {
             case "pouzi":
                 this.pouziPredmet(prikaz, hrac);
                 return false;
+            case "porozpravaj":
+                this.porozpravajSNpc(prikaz, hrac);
+                return false;
             default:
                 return false;
         }
+    }
+
+    private void porozpravajSNpc(Prikaz prikaz, Hrac hrac) {
+        if (!prikaz.maParameter()) {
+            System.out.println("S kym sa to chces porozpravat?");
+            return;
+        }
+
+        String menoNpc = prikaz.getParameter();
+
+        hrac.porozpravajSaSNpc(menoNpc);
     }
 
     private void pouziPredmet(Prikaz prikaz, Hrac hrac) {

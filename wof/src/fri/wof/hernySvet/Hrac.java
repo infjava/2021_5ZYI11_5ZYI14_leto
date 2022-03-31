@@ -1,5 +1,6 @@
 package fri.wof.hernySvet;
 
+import fri.wof.npc.Npc;
 import fri.wof.predmety.IPredmet;
 
 import java.util.HashMap;
@@ -64,5 +65,14 @@ public class Hrac {
 
     public IPredmet getPredmet(String nazovPredmetu) {
         return this.inventar.get(nazovPredmetu);
+    }
+
+    public void porozpravajSaSNpc(String menoNpc) {
+        Npc npc = this.aktualnaMiestnost.getNpc(menoNpc);
+        if (npc == null) {
+            System.out.printf("Npc %s nikde nevidis%n", menoNpc);
+        }
+
+        // rozhovor
     }
 }
