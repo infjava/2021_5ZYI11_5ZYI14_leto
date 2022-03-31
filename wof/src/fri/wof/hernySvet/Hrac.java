@@ -1,5 +1,6 @@
 package fri.wof.hernySvet;
 
+import fri.wof.npc.CastRozhovoru;
 import fri.wof.npc.Npc;
 import fri.wof.predmety.IPredmet;
 
@@ -69,10 +70,13 @@ public class Hrac {
 
     public void porozpravajSaSNpc(String menoNpc) {
         Npc npc = this.aktualnaMiestnost.getNpc(menoNpc);
+
         if (npc == null) {
             System.out.printf("Npc %s nikde nevidis%n", menoNpc);
+            return;
         }
 
-        // rozhovor
+        CastRozhovoru korenRozhovoru = npc.getKorenRozhovoru();
+        korenRozhovoru.vypis();
     }
 }

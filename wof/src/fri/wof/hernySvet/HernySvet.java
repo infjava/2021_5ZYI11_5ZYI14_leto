@@ -1,6 +1,8 @@
 package fri.wof.hernySvet;
 
+import fri.wof.npc.CastRozhovoru;
 import fri.wof.npc.Npc;
+import fri.wof.npc.Odpoved;
 import fri.wof.predmety.Navleky;
 import fri.wof.predmety.PortalGun;
 import fri.wof.predmety.Predmet;
@@ -66,7 +68,15 @@ public class HernySvet {
         vratnica.vlozPredmet(new Navleky());
         vratnica.vlozPredmet(new PortalGun());
 
-        vratnica.postavNpc(new Npc("vratnicka"));
+        CastRozhovoru vratnickaA = new CastRozhovoru(
+                "Dobry den. Co si prajete?",
+                new Odpoved[] {
+                        new Odpoved("Dobry den, jednu horalku"),
+                        new Odpoved("Dobry den, aky je cas?"),
+                        new Odpoved("Dobry den, kolko je na skole miestnosti?")
+                }
+        );
+        vratnica.postavNpc(new Npc("vratnicka", vratnickaA));
 
         a.nastavVychod(c, "c");
         a.nastavVychod(vratnica, "vratnica");
