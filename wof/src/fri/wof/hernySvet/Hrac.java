@@ -79,13 +79,17 @@ public class Hrac {
             return;
         }
 
-        CastRozhovoru korenRozhovoru = npc.getKorenRozhovoru();
-        korenRozhovoru.vypis();
+        CastRozhovoru aktualnaCastRozhovoru = npc.getKorenRozhovoru();
 
-        System.out.print("Vyber: ");
-        int moznost = vstup.nextInt();
+        while (aktualnaCastRozhovoru.maOdpovede()) {
+            aktualnaCastRozhovoru.vypis();
 
-        CastRozhovoru nasledujucaCast = korenRozhovoru.getNasledujucaCast(moznost);
-        nasledujucaCast.vypis();
+            System.out.print("Vyber: ");
+            int moznost = vstup.nextInt();
+
+            aktualnaCastRozhovoru = aktualnaCastRozhovoru.getNasledujucaCast(moznost);
+        }
+
+        aktualnaCastRozhovoru.vypis();
     }
 }

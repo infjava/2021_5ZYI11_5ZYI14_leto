@@ -20,4 +20,8 @@ public class CastRozhovoru {
     public CastRozhovoru getNasledujucaCast(int moznost) {
         return this.odpovede[moznost - 1].getNasledujucaCast();
     }
+
+    public boolean maOdpovede() {
+        return this.odpovede.length > 0;
+    }
 }
