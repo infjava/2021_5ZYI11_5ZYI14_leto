@@ -22,41 +22,41 @@ package fri.wof;/*
    - bufetarka predava bagety
    - vratnicka dava napovedy
  > porozpravaj vratnicka
- Dobry den. Co si prajete?
+ Dobry den. Co si prajete? <== A
  1) Dobry den, jednu horalku
  2) Dobry den, aky je cas?
  3) Dobry den, kolko je na skole miestnosti?
  Vyber: 1
- To musite ist za bufetarkou
+ To musite ist za bufetarkou <== B
 
- Dobry den. Co si prajete?
+ Dobry den. Co si prajete? <== A
  1) Dobry den, jednu horalku
  2) Dobry den, aky je cas?
  3) Dobry den, kolko je na skole miestnosti?
  Vyber: 2
- CEST, alebo UTC?
+ CEST, alebo UTC? <== C
  1) CEST
  2) UTC
  Vyber: 1
- 12:59
+ 12:59 <== D
 
- Dobry den. Co si prajete?
+ Dobry den. Co si prajete? <== A
  1) Dobry den, jednu horalku
  2) Dobry den, aky je cas?
  3) Dobry den, kolko je na skole miestnosti?
  Vyber: 2
- CEST, alebo UTC?
+ CEST, alebo UTC? <== C
  1) CEST
  2) UTC
  Vyber: 2
- 10:59
+ 10:59 <== E
 
- Dobry den. Co si prajete?
+ Dobry den. Co si prajete? <== A
  1) Dobry den, jednu horalku
  2) Dobry den, aky je cas?
  3) Dobry den, kolko je na skole miestnosti?
  Vyber: 3
- 12, vratane vytahu.
+ 12, vratane vytahu. <== F
 
  questy
  - sprav skusku
