@@ -43,8 +43,8 @@ public class Miestnost {
         return this.predmety.remove(nazovPredmetu);
     }
 
-    public Miestnost getMiestnostVSmere(String smer) {
-        return null;
+    public Miestnost getMiestnostVSmere(String smer) throws NespravnyVychodException {
+        throw new NespravnyVychodException();
     }
 
     public boolean mozeVojst(Hrac hrac) {

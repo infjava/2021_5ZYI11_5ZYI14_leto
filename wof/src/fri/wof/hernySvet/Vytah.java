@@ -27,11 +27,11 @@ public class Vytah extends Miestnost {
     }
 
     @Override
-    public Miestnost getMiestnostVSmere(String smer) {
+    public Miestnost getMiestnostVSmere(String smer) throws NespravnyVychodException {
         if (smer.equals("von")) {
             return this.poschodia.get(this.aktualnePoschodie);
         }
-        return null;
+        throw new NespravnyVychodException();
     }
 
     public void posunVytah() {

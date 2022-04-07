@@ -45,8 +45,12 @@ public class StandardnaMiestnost extends Miestnost {
         this.vypisZoznamNpc();
     }
 
-    public Miestnost getMiestnostVSmere(String smer) {
-        return this.vychody.get(smer);
+    public Miestnost getMiestnostVSmere(String smer) throws NespravnyVychodException {
+        Miestnost miestnost = this.vychody.get(smer);
+        if (miestnost == null) {
+            throw new NespravnyVychodException();
+        }
+        return miestnost;
     }
 
     public boolean mozeVojst(Hrac hrac) {

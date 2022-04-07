@@ -28,9 +28,7 @@ public class Hrac {
     public void posunSa(String smer) throws NespravnyVychodException, VychodNepristupnyException {
         Miestnost novaMiestnost = this.aktualnaMiestnost.getMiestnostVSmere(smer);
 
-        if (novaMiestnost == null) {
-            throw new NespravnyVychodException();
-        } else if (!novaMiestnost.mozeVojst(this)) {
+        if (!novaMiestnost.mozeVojst(this)) {
             throw new VychodNepristupnyException();
         } else {
             this.aktualnaMiestnost = novaMiestnost;
