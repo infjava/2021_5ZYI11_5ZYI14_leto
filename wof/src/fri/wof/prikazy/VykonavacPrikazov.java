@@ -1,6 +1,8 @@
 package fri.wof.prikazy;
 
 import fri.wof.hernySvet.Hrac;
+import fri.wof.hernySvet.NespravnyVychodException;
+import fri.wof.hernySvet.VychodNepristupnyException;
 
 /**
  * Trieda NazvyPrikazov udrzuje zoznam nazvov platnych prikazov hry. 
@@ -159,7 +161,13 @@ public class VykonavacPrikazov {
 
         String smer = prikaz.getParameter();
 
-        hrac.posunSa(smer);
+        try {
+            hrac.posunSa(smer);
+        } catch (NespravnyVychodException e) {
+            System.out.println("Tam nie je vychod!");
+        } catch (VychodNepristupnyException e) {
+            System.out.println("Nemozes vojst");
+        }
     }
 
     /**

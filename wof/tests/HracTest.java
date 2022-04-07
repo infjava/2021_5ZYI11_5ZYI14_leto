@@ -1,6 +1,4 @@
-import fri.wof.hernySvet.Hrac;
-import fri.wof.hernySvet.Miestnost;
-import fri.wof.hernySvet.StandardnaMiestnost;
+import fri.wof.hernySvet.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -34,7 +32,7 @@ class HracTest {
     }
 
     @Test
-    void posunSaSpravne() {
+    void posunSaSpravne() throws NespravnyVychodException, VychodNepristupnyException {
         this.hrac.posunSa("sever");
 
         Assertions.assertSame(this.susedna, this.hrac.getAktualnaMiestnost());
@@ -42,14 +40,24 @@ class HracTest {
 
     @Test
     void posunSaDoNespravnehoSmeru() {
-        this.hrac.posunSa("vychod");
+        Assertions.assertThrows(
+            NespravnyVychodException.class,
+            () -> {
+                this.hrac.posunSa("vychod");
+            }
+        );
 
         Assertions.assertSame(this.aktualna, this.hrac.getAktualnaMiestnost());
     }
 
     @Test
     void posunSaDoNeexistujucehoSmeru() {
-        this.hrac.posunSa("severozapad");
+        Assertions.assertThrows(
+            NespravnyVychodException.class,
+            () -> {
+                this.hrac.posunSa("severozapad");
+            }
+        );
 
         Assertions.assertSame(this.aktualna, this.hrac.getAktualnaMiestnost());
     }

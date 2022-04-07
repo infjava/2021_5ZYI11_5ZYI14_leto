@@ -25,13 +25,13 @@ public class Hrac {
         return this.aktualnaMiestnost;
     }
 
-    public void posunSa(String smer) {
+    public void posunSa(String smer) throws NespravnyVychodException, VychodNepristupnyException {
         Miestnost novaMiestnost = this.aktualnaMiestnost.getMiestnostVSmere(smer);
 
         if (novaMiestnost == null) {
-            System.out.println("Tam nie je vychod!");
+            throw new NespravnyVychodException();
         } else if (!novaMiestnost.mozeVojst(this)) {
-            System.out.println("Nemozes vojst");
+            throw new VychodNepristupnyException();
         } else {
             this.aktualnaMiestnost = novaMiestnost;
             this.aktualnaMiestnost.vypisPopisMiestnosti();
