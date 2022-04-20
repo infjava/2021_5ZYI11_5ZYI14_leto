@@ -69,3 +69,5 @@ StandardnaMiestnost wc
     radsej ani nepoviem, co vidim
     Vychody:
         - a
+
+Start vratnica
