@@ -1,0 +1,71 @@
+StandardnaMiestnost sietovyLabak
+    tu robime pokusy na pocitacovej sieti; hadam nezhodime cely internet
+    Vychody:
+        - vytah
+
+StandardnaMiestnost vonok
+    i want to be free
+    Vychody:
+        - vratnica
+        - jedalen
+
+StandardnaMiestnost jedalen
+    prave davaju na obed uho - univerzalnu hnedu omacku. Mnam
+    Vychody:
+        - vonok
+        - c
+
+MiestnostSKontrolouNavlekov b2
+    skupina studentov prave maka na novych vlastnostiach hry world of fri
+    Vychody:
+        - b
+
+Vytah vytah
+    do tohto by nikto pricetny nesadol. Takze ja mozem
+    Poschodia:
+        - b
+        - sietovyLabak
+
+StandardnaMiestnost c9
+    prave prebieha prednaska z matiky, aspon sa nieco naucim
+    Vychody:
+        - c
+
+StandardnaMiestnost c
+    chodba v podzemi, uz len najst dalsi level a idem na Diabla
+    Vychody:
+        - c9
+        - jedalen
+        - atrium
+        - a
+
+StandardnaMiestnost atrium
+    dnes vystavuju Picasa
+    Vychody:
+        - c
+
+StandardnaMiestnost b
+    dlha temna chodba
+    Vychody:
+        - b2
+        - vytah
+        - vratnica
+
+StandardnaMiestnost vratnica
+    hlavny vstup na fakultu
+    Vychody:
+        - b
+        - a
+        - vonok
+
+StandardnaMiestnost a
+    po chodbe sa siria vone z jedalne a z wc
+    Vychody:
+        - c
+        - vratnica
+        - wc
+
+StandardnaMiestnost wc
+    radsej ani nepoviem, co vidim
+    Vychody:
+        - a
