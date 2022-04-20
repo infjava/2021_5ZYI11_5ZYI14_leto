@@ -62,6 +62,8 @@ StandardnaMiestnost vratnica
         - Predmet isic
         - Navleky
         - PortalGun
+    Npc:
+        - vratnicka
 
 StandardnaMiestnost a
     po chodbe sa siria vone z jedalne a z wc

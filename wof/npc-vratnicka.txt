@@ -1,0 +1,16 @@
+A Dobry den. Co si prajete?
+- B Dobry den, jednu horalku
+- C Dobry den, aky je cas?
+- F Dobry den, kolko je na skole miestnosti?
+
+B To musite ist za bufetarkou
+
+C CEST, alebo UTC?
+- D CEST
+- E UTC
+
+D 12:59
+
+E 10:59
+
+F 12, vratane vytahu
