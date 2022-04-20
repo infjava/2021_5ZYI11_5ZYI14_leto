@@ -57,6 +57,11 @@ StandardnaMiestnost vratnica
         - b
         - a
         - vonok
+    Predmety:
+        - Predmet kluce
+        - Predmet isic
+        - Navleky
+        - PortalGun
 
 StandardnaMiestnost a
     po chodbe sa siria vone z jedalne a z wc
