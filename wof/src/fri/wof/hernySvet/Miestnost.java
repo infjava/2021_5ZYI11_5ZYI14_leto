@@ -76,4 +76,9 @@ public class Miestnost {
     public Npc getNpc(String menoNpc) {
         return this.npccka.get(menoNpc);
     }
+
+    public String getNazov() {
+        String[] castiPopisu = this.popisMiestnosti.split(" - ");
+        return castiPopisu[0];
+    }
 }

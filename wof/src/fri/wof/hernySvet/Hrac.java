@@ -4,7 +4,9 @@ import fri.wof.npc.CastRozhovoru;
 import fri.wof.npc.Npc;
 import fri.wof.predmety.IPredmet;
 
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -92,7 +94,12 @@ public class Hrac {
         aktualnaCastRozhovoru.vypis();
     }
 
-    public void ulozPoziciu(DataOutputStream streamPozicie) {
+    public void ulozPoziciu(DataOutputStream streamPozicie) throws IOException {
+        streamPozicie.writeUTF(this.aktualnaMiestnost.getNazov());
+    }
 
+    public void nacitajPoziciu(DataInputStream streamPozicie, int verzia, HernySvet hernySvet) throws IOException {
+        String nazovMiestnosti = streamPozicie.readUTF();
+        this.aktualnaMiestnost = hernySvet.getMiestnost(nazovMiestnosti);
     }
 }

@@ -93,6 +93,7 @@ public class Hra  {
                 System.out.println("Toto je save pre novsiu verziu WOF. Ak chces pokracovat, musis zacvakat.");
                 return;
             }
+            this.hrac.nacitajPoziciu(streamPozicie, verzia, this.hernySvet);
             this.hrac.getAktualnaMiestnost().vypisPopisMiestnosti();
         } catch (IOException e) {
             System.out.println("Sorry, ale tento save sa nepodaril. Prajem stastne hranie.");

@@ -106,4 +106,8 @@ public class HernySvet {
     public StandardnaMiestnost getStartovaciaMiestnost() {
         return this.startovaciaMiestnost;
     }
+
+    public Miestnost getMiestnost(String nazovMiestnosti) {
+        return this.startovaciaMiestnost; // TODO nacitanie miestnosti podla nazvu
+    }
 }
