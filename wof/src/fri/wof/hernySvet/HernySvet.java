@@ -7,14 +7,12 @@ import fri.wof.predmety.Navleky;
 import fri.wof.predmety.PortalGun;
 import fri.wof.predmety.Predmet;
 
-import java.io.Serializable;
-
 /**
  * 28. 2. 2021 - 21:14
  *
  * @author janik
  */
-public class HernySvet implements Serializable {
+public class HernySvet {
     private final StandardnaMiestnost startovaciaMiestnost;
 
     /**

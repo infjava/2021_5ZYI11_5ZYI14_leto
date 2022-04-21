@@ -1,8 +1,6 @@
 package fri.wof.npc;
 
-import java.io.Serializable;
-
-public class Odpoved implements Serializable {
+public class Odpoved {
     private final String replika;
     private final CastRozhovoru nasledujucaCast;
 

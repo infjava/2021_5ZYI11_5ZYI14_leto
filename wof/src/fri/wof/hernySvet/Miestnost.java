@@ -3,11 +3,10 @@ package fri.wof.hernySvet;
 import fri.wof.npc.Npc;
 import fri.wof.predmety.IPredmet;
 
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Set;
 
-public class Miestnost implements Serializable {
+public class Miestnost {
     private final String popisMiestnosti;
     private final HashMap<String, IPredmet> predmety;
     private final HashMap<String, Npc> npccka;

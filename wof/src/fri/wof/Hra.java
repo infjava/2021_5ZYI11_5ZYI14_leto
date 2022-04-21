@@ -29,10 +29,13 @@ import java.io.*;
 */
  
 public class Hra  {
+    private static final int SAVE_MAGIC_NUMBER = 546456854;
+    private static final int SAVE_VERSION = 1;
+
     private final Parser parser;
-    private Hrac hrac;
+    private final Hrac hrac;
     @SuppressWarnings("FieldCanBeLocal")
-    private HernySvet hernySvet;
+    private final HernySvet hernySvet;
     private final VykonavacPrikazov vykonavacPrikazov;
 
     /**
@@ -80,11 +83,18 @@ public class Hra  {
 
     public void nacitajPoziciu(String nazovPozicie) {
         File suborPozicie = new File(nazovPozicie + ".wofsave");
-        try (ObjectInputStream streamPozicie = new ObjectInputStream(new FileInputStream(suborPozicie))) {
-            this.hrac = (Hrac)streamPozicie.readObject();
-            this.hernySvet = (HernySvet)streamPozicie.readObject();
+        try (DataInputStream streamPozicie = new DataInputStream(new FileInputStream(suborPozicie))) {
+            if (streamPozicie.readInt() != Hra.SAVE_MAGIC_NUMBER) {
+                System.out.println("Toto je chybny save");
+                return;
+            }
+            int verzia = streamPozicie.readInt();
+            if (verzia > Hra.SAVE_VERSION) {
+                System.out.println("Toto je save pre novsiu verziu WOF. Ak chces pokracovat, musis zacvakat.");
+                return;
+            }
             this.hrac.getAktualnaMiestnost().vypisPopisMiestnosti();
-        } catch (IOException | ClassNotFoundException e) {
+        } catch (IOException e) {
             System.out.println("Sorry, ale tento save sa nepodaril. Prajem stastne hranie.");
             e.printStackTrace();
         }
@@ -92,9 +102,10 @@ public class Hra  {
 
     public void ulozPoziciu(String nazovPozicie) {
         File suborPozicie = new File(nazovPozicie + ".wofsave");
-        try (ObjectOutputStream streamPozicie = new ObjectOutputStream(new FileOutputStream(suborPozicie))) {
-            streamPozicie.writeObject(this.hrac);
-            streamPozicie.writeObject(this.hernySvet);
+        try (DataOutputStream streamPozicie = new DataOutputStream(new FileOutputStream(suborPozicie))) {
+            streamPozicie.writeInt(Hra.SAVE_MAGIC_NUMBER);
+            streamPozicie.writeInt(Hra.SAVE_VERSION);
+            this.hrac.ulozPoziciu(streamPozicie);
         } catch (IOException e) {
             System.out.println("Sorry, ale tento save sa nepodaril. Prajem stastne hranie.");
             e.printStackTrace();
