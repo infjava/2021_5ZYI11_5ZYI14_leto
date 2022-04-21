@@ -2,7 +2,9 @@ package fri.wof.predmety;
 
 import fri.wof.hernySvet.Hrac;
 
-public interface IPredmet {
+import java.io.Serializable;
+
+public interface IPredmet extends Serializable {
     String getNazov();
 
     void pouzi(Hrac hrac);

@@ -6,6 +6,8 @@ import fri.wof.prikazy.Parser;
 import fri.wof.prikazy.Prikaz;
 import fri.wof.prikazy.VykonavacPrikazov;
 
+import java.io.*;
+
 /**
  * Trieda fri.wof.Hra je hlavna trieda aplikacie "World of FRI".
  * "World of FRI" je velmi jednoducha textova hra - adventura. 
@@ -28,9 +30,9 @@ import fri.wof.prikazy.VykonavacPrikazov;
  
 public class Hra  {
     private final Parser parser;
-    private final Hrac hrac;
+    private Hrac hrac;
     @SuppressWarnings("FieldCanBeLocal")
-    private final HernySvet hernySvet;
+    private HernySvet hernySvet;
     private final VykonavacPrikazov vykonavacPrikazov;
 
     /**
@@ -58,7 +60,7 @@ public class Hra  {
         
         do {
             Prikaz prikaz = this.parser.nacitajPrikaz();
-            jeKoniec = this.vykonavacPrikazov.vykonajPrikaz(prikaz, this.hrac);
+            jeKoniec = this.vykonavacPrikazov.vykonajPrikaz(prikaz, this.hrac, this);
         } while (!jeKoniec);
         
         System.out.println("Maj sa fajn!");
@@ -76,4 +78,26 @@ public class Hra  {
         this.hrac.getAktualnaMiestnost().vypisPopisMiestnosti();
     }
 
+    public void nacitajPoziciu(String nazovPozicie) {
+        File suborPozicie = new File(nazovPozicie + ".wofsave");
+        try (ObjectInputStream streamPozicie = new ObjectInputStream(new FileInputStream(suborPozicie))) {
+            this.hrac = (Hrac)streamPozicie.readObject();
+            this.hernySvet = (HernySvet)streamPozicie.readObject();
+            this.hrac.getAktualnaMiestnost().vypisPopisMiestnosti();
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Sorry, ale tento save sa nepodaril. Prajem stastne hranie.");
+            e.printStackTrace();
+        }
+    }
+
+    public void ulozPoziciu(String nazovPozicie) {
+        File suborPozicie = new File(nazovPozicie + ".wofsave");
+        try (ObjectOutputStream streamPozicie = new ObjectOutputStream(new FileOutputStream(suborPozicie))) {
+            streamPozicie.writeObject(this.hrac);
+            streamPozicie.writeObject(this.hernySvet);
+        } catch (IOException e) {
+            System.out.println("Sorry, ale tento save sa nepodaril. Prajem stastne hranie.");
+            e.printStackTrace();
+        }
+    }
 }

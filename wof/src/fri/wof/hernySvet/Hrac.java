@@ -4,6 +4,7 @@ import fri.wof.npc.CastRozhovoru;
 import fri.wof.npc.Npc;
 import fri.wof.predmety.IPredmet;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -12,7 +13,7 @@ import java.util.Scanner;
  *
  * @author janik
  */
-public class Hrac {
+public class Hrac implements Serializable {
     private final HashMap<String, IPredmet> inventar;
     private Miestnost aktualnaMiestnost;
 

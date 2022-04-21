@@ -1,5 +1,6 @@
 package fri.wof.prikazy;
 
+import fri.wof.Hra;
 import fri.wof.hernySvet.Hrac;
 import fri.wof.hernySvet.NespravnyVychodException;
 import fri.wof.hernySvet.VychodNepristupnyException;
@@ -18,7 +19,7 @@ public class VykonavacPrikazov {
     // konstantne pole nazvov prikazov
     private static final String[] PLATNE_PRIKAZY = {
         "chod", "ukonci", "pomoc", "prehladaj", "zdvihni", "poloz", "pouzi",
-        "porozpravaj"
+        "porozpravaj", "save", "load"
     };
 
     /**
@@ -44,7 +45,7 @@ public class VykonavacPrikazov {
      * @param hra
      * @return true ak prikaz ukonci hru, inak vrati false.
      */
-    public boolean vykonajPrikaz(Prikaz prikaz, Hrac hrac) {
+    public boolean vykonajPrikaz(Prikaz prikaz, Hrac hrac, Hra hra) {
         if (prikaz.jeNeznamy()) {
             System.out.println("Nerozumiem, co mas na mysli...");
             return false;
@@ -76,9 +77,33 @@ public class VykonavacPrikazov {
             case "porozpravaj":
                 this.porozpravajSNpc(prikaz, hrac);
                 return false;
+            case "save":
+                this.ulozPoziciu(prikaz, hra);
+                return false;
+            case "load":
+                this.nacitajPoziciu(prikaz, hra);
+                return false;
             default:
                 return false;
         }
+    }
+
+    private void nacitajPoziciu(Prikaz prikaz, Hra hra) {
+        if (!prikaz.maParameter()) {
+            System.out.println("Zabudol si napisat nazov pozicie");
+            return;
+        }
+
+        hra.nacitajPoziciu(prikaz.getParameter());
+    }
+
+    private void ulozPoziciu(Prikaz prikaz, Hra hra) {
+        if (!prikaz.maParameter()) {
+            System.out.println("Zabudol si napisat nazov pozicie");
+            return;
+        }
+
+        hra.ulozPoziciu(prikaz.getParameter());
     }
 
     private void porozpravajSNpc(Prikaz prikaz, Hrac hrac) {
