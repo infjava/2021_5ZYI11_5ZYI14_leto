@@ -1,18 +1,18 @@
 package fri.zoo;
 
 public class Klietka {
-    private Lev lev;
+    private Zviera zviera;
 
-    public void vlozZviera(Lev lev) {
+    public void vlozZviera(Zviera zviera) {
 
-        this.lev = lev;
+        this.zviera = zviera;
     }
 
     public void vypis() {
-        if (this.lev == null) {
+        if (this.zviera == null) {
             System.out.println("Klietka je prazdna");
         } else {
-            System.out.printf("V klietke je %s%n", this.lev);
+            System.out.printf("V klietke je %s%n", this.zviera);
         }
     }
 }

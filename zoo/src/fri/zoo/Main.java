@@ -4,8 +4,13 @@ public class Main {
 
     public static void main(String[] args) {
 	    Lev lev = new Lev();
-        Klietka klietka = new Klietka();
-        klietka.vlozZviera(lev);
-        klietka.vypis();
+        Klietka klietkaNaLeva = new Klietka();
+        klietkaNaLeva.vlozZviera(lev);
+        klietkaNaLeva.vypis();
+
+        Mys mys = new Mys();
+        Klietka klietkaNaMys = new Klietka();
+        klietkaNaMys.vlozZviera(mys);
+        klietkaNaMys.vypis();
     }
 }
