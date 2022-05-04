@@ -15,6 +15,10 @@ public class Main {
         klietkaNaMys.vypis();
         System.out.println(klietkaNaMys.getTextNaCedulke());
 
+        for (Mys prvok : klietkaNaMys) {
+            System.out.println(prvok);
+        }
+
         // Klietka<String> klietkaNaRetazce = new Klietka<String>();
     }
 }
