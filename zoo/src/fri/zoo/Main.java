@@ -3,6 +3,9 @@ package fri.zoo;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+	    Lev lev = new Lev();
+        Klietka klietka = new Klietka();
+        klietka.vlozZviera(lev);
+        klietka.vypis();
     }
 }
