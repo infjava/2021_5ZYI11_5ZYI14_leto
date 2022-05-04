@@ -1,11 +1,19 @@
 package fri.zoo;
 
-public class Klietka<E> {
+public class Klietka<E extends Zviera> {
     private E zviera;
 
     public void vlozZviera(E zviera) {
 
         this.zviera = zviera;
+    }
+
+    public String getTextNaCedulke() {
+        if (this.zviera == null) {
+            return "Prazdna klietka";
+        } else {
+            return String.format("Zviera s menom %s", this.zviera.getMeno());
+        }
     }
 
     public void vypis() {

@@ -5,4 +5,9 @@ public class Lev extends Zviera {
     public String toString() {
         return "Lev";
     }
+
+    @Override
+    public String getMeno() {
+        return "Alex";
+    }
 }
