@@ -19,6 +19,14 @@ public class Main {
             System.out.println(prvok);
         }
 
+        for (Integer cislo : new Prvocisla(100)) {
+            System.out.println(cislo);
+        }
+
+        /*for (Mys cislo : new CitacBinarnehoSuboru<Mys>("mysi.bin")) {
+            System.out.println(cislo);
+        }*/
+
         // Klietka<String> klietkaNaRetazce = new Klietka<String>();
     }
 }
