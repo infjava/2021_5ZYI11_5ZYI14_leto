@@ -2,15 +2,17 @@ package fri.vtipnaAplikacia;
 
 import javax.swing.*;
 
-public class VtipneOkno extends JFrame {
+public class VtipneOkno {
+    private final JFrame okno;
+
     public VtipneOkno() {
-        super("Vtipna aplikacia");
-        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        this.add(new JLabel("Chceš úspešne ukončiť predmet Informatika 2?"));
-        this.pack();
+        this.okno = new JFrame("Vtipna aplikacia");
+        this.okno.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.okno.add(new JLabel("Chceš úspešne ukončiť predmet Informatika 2?"));
+        this.okno.pack();
     }
 
     public void zobraz() {
-        this.setVisible(true);
+        this.okno.setVisible(true);
     }
 }
