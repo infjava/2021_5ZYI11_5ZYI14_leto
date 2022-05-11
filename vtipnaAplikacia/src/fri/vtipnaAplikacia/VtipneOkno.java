@@ -13,7 +13,11 @@ public class VtipneOkno {
 
         JPanel tlacitka = new JPanel();
         tlacitka.setLayout(new GridLayout());
-        tlacitka.add(new JButton("Jasné"), BorderLayout.WEST);
+
+        JButton jasne = new JButton("Jasné");
+        jasne.addActionListener(new KlikNaJasne());
+        tlacitka.add(jasne, BorderLayout.WEST);
+
         tlacitka.add(new JButton("Nie"), BorderLayout.EAST);
         this.okno.add(tlacitka, BorderLayout.CENTER);
 
