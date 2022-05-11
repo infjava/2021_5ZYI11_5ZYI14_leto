@@ -17,12 +17,9 @@ public class VtipneOkno {
         tlacitka.setLayout(new GridLayout());
 
         JButton jasne = new JButton("Jasné");
-        jasne.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Tak by si sa mal začať učiť!!!");
-                System.exit(0);
-            }
+        jasne.addActionListener(e -> {
+            JOptionPane.showMessageDialog(null, "Tak by si sa mal začať učiť!!!");
+            System.exit(0);
         });
         tlacitka.add(jasne, BorderLayout.WEST);
 
