@@ -7,16 +7,23 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="ee7a3" class="javax.swing.JList" binding="zoznamStudentovList">
+      <scrollpane id="53bfe">
         <constraints border-constraint="Center"/>
-        <properties>
-          <model>
-            <item value="Jozo"/>
-            <item value="Fero"/>
-            <item value="Jano"/>
-          </model>
-        </properties>
-      </component>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="ee7a3" class="javax.swing.JList" binding="zoznamStudentovList">
+            <constraints/>
+            <properties>
+              <model>
+                <item value="Jozo"/>
+                <item value="Fero"/>
+                <item value="Jano"/>
+              </model>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
     </children>
   </grid>
 </form>
