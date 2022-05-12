@@ -7,6 +7,13 @@ public class HlavneOkno {
     private final DefaultListModel<Student> zoznam;
     private JList<Student> zoznamStudentovList;
     private JPanel obsahOknaPanel;
+    private JTextField menoTextField;
+    private JTextField priezviskoTextField;
+    private JTextField skupinaTextField;
+    private JButton pridajButton;
+    private JButton odstranButton;
+    private JButton upravButton;
+    private JButton vyhladajButton;
 
     public HlavneOkno() {
         this.zoznam = new DefaultListModel<>();
