@@ -44,6 +44,10 @@ public class VtipneOkno {
                 nie.grabFocus();
             }
         });
+        nie.addActionListener(e -> {
+            JOptionPane.showMessageDialog(null, "Tak by si sa mal začať učiť!!!");
+            System.exit(0);
+        });
         tlacitka.add(nie, BorderLayout.EAST);
         this.okno.add(tlacitka, BorderLayout.CENTER);
 
