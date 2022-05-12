@@ -26,7 +26,10 @@ public class VtipneOkno {
             @Override
             public void mouseEntered(MouseEvent e) {
                 jasne.setText("Jasné");
+                jasne.setFocusable(true);
+                jasne.grabFocus();
                 nie.setText("Nie");
+                nie.setFocusable(false);
             }
         });
         tlacitka.add(jasne, BorderLayout.WEST);
@@ -35,7 +38,10 @@ public class VtipneOkno {
             @Override
             public void mouseEntered(MouseEvent e) {
                 jasne.setText("Nie");
+                jasne.setFocusable(false);
                 nie.setText("Jasné");
+                nie.setFocusable(true);
+                nie.grabFocus();
             }
         });
         tlacitka.add(nie, BorderLayout.EAST);
