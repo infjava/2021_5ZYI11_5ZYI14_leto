@@ -9,8 +9,14 @@ public class VtipneOkno {
 
     public VtipneOkno() {
         this.okno = new JFrame("Vtipna aplikacia");
-        this.okno.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.okno.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         this.okno.add(new JLabel("Chceš úspešne ukončiť predmet Informatika 2?"), BorderLayout.NORTH);
+        this.okno.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                JOptionPane.showMessageDialog(null, "Heh, sorry, ale asi nie.");
+            }
+        });
 
         JPanel tlacitka = new JPanel();
         tlacitka.setLayout(new GridLayout());
