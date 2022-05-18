@@ -26,6 +26,8 @@ public class HlavneOkno {
         this.okno.add(this.obsahOknaPanel);
         this.okno.pack();
 
+        this.okno.getRootPane().setDefaultButton(this.pridajButton);
+
         this.pridajButton.addActionListener(e -> this.pridajButtonActionPerformed());
     }
 
