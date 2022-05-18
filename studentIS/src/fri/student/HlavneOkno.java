@@ -1,6 +1,8 @@
 package fri.student;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -29,6 +31,37 @@ public class HlavneOkno {
         this.okno.getRootPane().setDefaultButton(this.pridajButton);
 
         this.pridajButton.addActionListener(e -> this.pridajButtonActionPerformed());
+
+        DocumentListener textFieldChangeListener = new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                HlavneOkno.this.textFieldUpdate();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                HlavneOkno.this.textFieldUpdate();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                HlavneOkno.this.textFieldUpdate();
+            }
+        };
+
+        this.menoTextField.getDocument().addDocumentListener(textFieldChangeListener);
+        this.priezviskoTextField.getDocument().addDocumentListener(textFieldChangeListener);
+        this.skupinaTextField.getDocument().addDocumentListener(textFieldChangeListener);
+
+        this.textFieldUpdate();
+    }
+
+    private void textFieldUpdate() {
+        boolean niecoPrazdne = this.menoTextField.getText().isEmpty()
+                || this.priezviskoTextField.getText().isEmpty()
+                || this.skupinaTextField.getText().isEmpty();
+
+        this.pridajButton.setEnabled(!niecoPrazdne);
     }
 
     private void pridajButtonActionPerformed() {
