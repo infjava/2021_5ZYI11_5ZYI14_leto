@@ -37,6 +37,12 @@ public class HlavneOkno {
                         this.skupinaTextField.getText()
                 )
         );
+
+        this.menoTextField.setText("");
+        this.priezviskoTextField.setText("");
+        this.skupinaTextField.setText("");
+
+        this.menoTextField.grabFocus();
     }
 
     public void zobraz() {
