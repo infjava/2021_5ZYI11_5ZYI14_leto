@@ -1,6 +1,8 @@
 package fri.student;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class HlavneOkno {
     private final JFrame okno;
@@ -24,10 +26,17 @@ public class HlavneOkno {
         this.okno.add(this.obsahOknaPanel);
         this.okno.pack();
 
-        // testovanie
-        this.zoznam.addElement(new Student("Jozko", "Mrkvicka", "5ZYI99"));
-        this.zoznam.addElement(new Student("Ferko", "Mrkvicka", "5ZYI99"));
-        this.zoznam.addElement(new Student("Jano", "Kalerab", "5ZYI99"));
+        this.pridajButton.addActionListener(e -> this.pridajButtonActionPerformed());
+    }
+
+    private void pridajButtonActionPerformed() {
+        this.zoznam.addElement(
+                new Student(
+                        this.menoTextField.getText(),
+                        this.priezviskoTextField.getText(),
+                        this.skupinaTextField.getText()
+                )
+        );
     }
 
     public void zobraz() {
